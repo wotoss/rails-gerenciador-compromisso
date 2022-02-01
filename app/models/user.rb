@@ -18,4 +18,6 @@ validates :email, presence: true, length: { maximum: 255 },
            # faz com que este email seja unico => uniqueness
            # caix alta, caixa baixa => case_sensitive
                         uniqueness: { case_sensitive: true }
+
+ has_many :contacts                       
 end

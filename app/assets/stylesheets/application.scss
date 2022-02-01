@@ -2,10 +2,31 @@
 /*https://github.com/twbs/bootstrap-sass*/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "pages";
 
 /*esta é uma varivel definida por mim*/
 /*definindo uma varivel em sass*/
 $gray-medium-light: #EAEAEA;
+
+/*teste inicio*/
+.post-card {
+    display: inline-block;
+  }
+  
+  .post-legenda {
+    display: inline-block;
+    font-size: 10px;
+    color: gray;
+  }
+  
+  .caption {
+    .legenda {
+      padding-top: 5px;
+      text-align: center;
+    }
+  }
+
+/*teste fim*/
 
 footer{
   margin-top: 45px;
