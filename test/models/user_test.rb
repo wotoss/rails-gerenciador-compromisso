@@ -1,7 +1,49 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  
+  def setup
+    @authentication = User.new(name: "woto", email: "evania@gmail.com", password: "022855")
+  end
+  
+
+  #esta passando => nivel model
+  test "should not save user without name" do
+    user = User.new
+    assert_not user.save, "Saved the user without a name"
+  end
+
+   #tambem esta pasando
+   test "should be valid" do
+    assert @authentication.valid?
+  end
+
+  #tambem esta passando
+  test "name should be present" do
+    @authentication.name = "  "
+    assert_not @authentication.valid?
+  end
+  
+  #feito
+  test "email should be present" do
+    @authentication.email = "  "
+    assert_not @authentication.valid?
+  end
+
+  test "password should be present" do
+    @authentication.password = " "
+    assert_not @authentication.valid?
+  end
+
+  test "valid should present" do
+    @authentication = true
+    assert :success
+  end
+
+  test "should  valid" do
+    assert @authentication.valid?
+  end
+
+  
+ 
 end

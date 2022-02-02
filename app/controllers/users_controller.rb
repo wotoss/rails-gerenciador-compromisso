@@ -4,11 +4,13 @@ class UsersController < ApplicationController
 
     # new vai renderizaro o formlário
     def new
+      debugger
      @user = User.new 
     end
 
     #create realmente vai receber o post 
     def create
+      
     #params ela quem vai trazer os parametros da requisição
     @user = User.new(user_params)
     if @user.save

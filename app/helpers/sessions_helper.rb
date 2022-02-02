@@ -6,7 +6,6 @@ module SessionsHelper
 
    #realizar o logout
    def sign_out
-    debugger
     session.delete(:user_id)
    end
 
