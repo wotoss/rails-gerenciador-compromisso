@@ -7,24 +7,20 @@ class UserTest < ActiveSupport::TestCase
   end
   
 
-  #esta passando => nivel model
   test "should not save user without name" do
     user = User.new
     assert_not user.save, "Saved the user without a name"
   end
 
-   #tambem esta pasando
    test "should be valid" do
     assert @authentication.valid?
   end
 
-  #tambem esta passando
   test "name should be present" do
     @authentication.name = "  "
     assert_not @authentication.valid?
   end
   
-  #feito
   test "email should be present" do
     @authentication.email = "  "
     assert_not @authentication.valid?

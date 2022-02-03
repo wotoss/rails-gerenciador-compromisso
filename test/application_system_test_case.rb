@@ -9,7 +9,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     visit root_path
    
     click_link 'Abra sua conta'
-   
+    sleep 1.0
     fill_in 'Nome', with:  'Livia'
     sleep 1.0
     fill_in 'Email', with: 'livia10@gmail.com'
@@ -42,13 +42,8 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     click_link 'Back'
     sleep 1.0
 
-    #logout
-    click_link 'bem vindo. Livia'
-    sleep 1.0
-    click_link 'Sair'
-    #assert_selector '#email', text: 'Email: rodrigo10@gmail.com'
     assert :success
-    sleep 10.0
+    sleep 15.0
   
   end
 
