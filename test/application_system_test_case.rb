@@ -7,7 +7,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   test 'system user registration' do
     
     visit root_path
-   
+    sleep 1.5
     click_link 'Abra sua conta'
     sleep 1.0
     fill_in 'Nome', with:  'Livia'
@@ -21,7 +21,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     click_button 'Cadastrar'
     sleep 1.0
     assert :success
-
+    sleep 1.0
     click_link 'Entrar'
     sleep 1.0
     fill_in 'Email', with: 'livia10@gmail.com'
@@ -29,8 +29,9 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     fill_in 'Password', with: '022896'
     sleep 1.0
     click_button 'Entrar'
+    sleep 1.0
     assert :success
-
+    sleep 1.0
     click_link 'Novo Contato'
     sleep 1.0
     fill_in 'Nome', with: 'Livia Victoria'
@@ -39,12 +40,11 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     sleep 1.0
     click_button 'Salvar'
     sleep 1.0
-    click_link 'Back'
+    click_link 'Voltar'
     sleep 1.0
 
     assert :success
-    sleep 15.0
+    sleep 10.0
   
   end
-
 end
