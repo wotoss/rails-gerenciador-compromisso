@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     #vai autenticar o usuario se a senha estiver correta
     if user && user.authenticate(params[:session][:password])
       sign_in(user)
-      redirect_to contacts_path
+      redirect_to products_path
     else
       flash.now[:danger] = 'Email ou senha invalidos'
       render 'new'

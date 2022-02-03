@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-
   #vou subistituir a primeira pagina padrão do rails por esta..
   #to para onde ele vai execultar esta ação => então teremos o nomedacontroller#nomedaaction
   root to: "pages#index"
@@ -21,8 +20,10 @@ Rails.application.routes.draw do
   #o rails já cria de forma rest-full todas as rotas padrões
   #quando montamos o scaffold ele já nos cria o resources como o CRUD encapsulado.
   resources :contacts
+  resources :products
   #estou declarando quais as rotas rest o usuario poderá acessar.
   resources :users, only: [:new, :create, :show, :edit, :update]
+  
 
   
 end

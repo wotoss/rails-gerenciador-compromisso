@@ -19,5 +19,8 @@ validates :email, presence: true, length: { maximum: 255 },
            # caix alta, caixa baixa => case_sensitive
                         uniqueness: { case_sensitive: true }
 
- has_many :contacts                       
+ #usuario tem muitos contatos                       
+ has_many :contacts
+ #usuario tem muitos produtos
+ has_many :products                       
 end

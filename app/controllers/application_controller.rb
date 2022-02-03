@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
     include SessionsHelper
 
     private 
+    #vamos exigir que certas rotas so sejam acessadas por usuario logado.
     def require_logged_in_user
       unless user_signed_in?
       flash[:danger] = 'Área restrita, por favor, realize o login'  
