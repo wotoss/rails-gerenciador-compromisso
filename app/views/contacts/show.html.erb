@@ -1,14 +1,28 @@
-<p id="notice"><%= notice %></p>
 
+<div class="row">
+<div class="col-xs-12 text-center">
+  <h1 style="color: green">Contato Atualizado!</h1>
+  <hr />
+
+
+  <p id="notice"><%= notice %></p>
+
+  <div class="form-group">
 <p>
   <strong>Name:</strong>
   <%= @contact.name %>
 </p>
+</div>
 
+<div class="form-group">
 <p>
   <strong>Phone:</strong>
   <%= @contact.phone %>
 </p>
+</div>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<%= link_to 'Edit', edit_contact_path(@contact), class: 'btn btn-warning' %> |
+<%= link_to 'Back', contacts_path, class: 'btn btn-primary' %>
+</div>
+</div>
+

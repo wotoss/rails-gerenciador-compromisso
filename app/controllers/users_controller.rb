@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 
     # new vai renderizaro o formlário
     def new
-      debugger
      @user = User.new 
     end
 
