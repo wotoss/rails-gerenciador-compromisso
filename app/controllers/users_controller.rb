@@ -24,11 +24,14 @@ class UsersController < ApplicationController
  end
 
  def edit
+  update
  end
 
  def update
+  
   if current_user.update(user_params)
     flash[:success] = 'Informações atualizadas'
+    debugger
     redirect_to contacts_url
   else
     render 'edit'

@@ -30,6 +30,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not @authentication.valid?
   end
 
+  test 'invalid no email' do
+    user = User.new(name: 'woto')
+    refute user.valid?
+    assert_not_nil user.errors[:email]
+  end
+
   test "password should be present" do
     @authentication.password = " "
     assert_not @authentication.valid?
@@ -44,6 +50,9 @@ class UserTest < ActiveSupport::TestCase
     assert @authentication.valid?
   end
 
-  
+  test 'valid user' do
+    user = User.new(name: 'woto', email: 'evania@gmail.com', password: "022855")
+    assert user.valid?
+  end
  
 end
