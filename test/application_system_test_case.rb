@@ -32,19 +32,19 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     sleep 1.0
     assert :success
     sleep 1.0
-    click_link 'Novo Contato'
+    click_link 'Novo Produto'
     sleep 1.0
-    fill_in 'Nome', with: 'Livia Victoria'
+    fill_in 'Name', with: 'Mesa gamer'
     sleep 1.0
-    fill_in 'Telefone', with: '(00) 95700-3564'
+    fill_in 'Description', with: 'Com quatro cadeiras'
     sleep 1.0
     click_button 'Salvar'
     sleep 1.0
     click_link 'Voltar'
     sleep 1.0
-
+    
     assert :success
-    sleep 10.0
+    sleep 8.0
   
   end
 end
