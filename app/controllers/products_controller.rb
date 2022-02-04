@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   #e neste caso ele está colocando o que para acessar o produto, precisa estar logado.
   before_action :require_logged_in_user
   # before_action => antes de exultar qualquer ação execulte o action => set_product
-  before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :set_product, only: [ :show, :edit, :update, :destroy ]
 
   # GET /products or /products.json
   def index
@@ -33,12 +33,12 @@ class ProductsController < ApplicationController
         format.html { redirect_to product_url(@product), notice: "Product was successfully created." }
         format.json { render :show, status: :created, location: @product }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
   end
-
+  
   # PATCH/PUT /products/1 or /products/1.json
   def update
     respond_to do |format|
@@ -46,7 +46,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to product_url(@product), notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @product }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
